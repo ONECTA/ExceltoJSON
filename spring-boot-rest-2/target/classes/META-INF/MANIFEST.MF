@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-boot-rest-2
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Ashutosh
+Implementation-Vendor-Id: com.bhaiti.kela
+Build-Jdk: 1.8.0_221
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-boot-rest-2
+Created-By: Maven Integration for Eclipse
+
