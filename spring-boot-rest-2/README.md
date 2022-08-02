@@ -1,23 +1,65 @@
-After the huge response and viewership for my earlier article https://dzone.com/articles/spring-boot-restful-web-service-example I have decided to write a new article with all the REST calls example respectively GET, POST, PUT and DELETE. 
+JQuery Code to test
 
-Prerequisites for this project:
+var settings = {
+  "url": "http://localhost:8080/parseExcel",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  "data": {
+    "param1": "value"
+  }
+};
 
-1. If you have Eclipse, download the STS plug-in from here https://marketplace.eclipse.org/content/spring-tools-aka-spring-ide-and-spring-tool-suite
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
-2. If you don’t have Eclipse, download STS from here https://spring.io/guides/gs/sts/
+JAVASCRIPT 
 
-3. Download the latest JDK from here http://www.oracle.com/technetwork/java/javase/downloads/index.html
+var data = "SAMLResponse=abcdef";
 
-4. Also for testing please download and install SOAPUI tool from here https://www.soapui.org/downloads/soapui.html
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
 
-The first example I am going to explain is about HTTP GET request, second example will be about HTTP POST request, third example about HTTP PUT request and fourth example is for HTTP DELETE request. In these entire examples I am going to use JSON Representation.
+xhr.addEventListener("readystatechange", function() {
+  if(this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
 
-Before checkout this project create a folder under C drive like C:\Projects
- 
-Now open command prompt
+xhr.open("POST", "http://localhost:8080/parseExcel");
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-1. cd c:\Projects
-2. check out the mail branch
-3. cd spring-boot-rest-2
-4. Execute - mvnw clean package
-5. start the server - java -jar target\spring-boot-rest-2-0.0.1-SNAPSHOT.jar
+xhr.send(data);
+
+
+POST 
+
+url :  http://localhost:8080/parseExcel
+body:  Send any params 
+{
+    "Sheet1": [
+        {
+            "Emp": "A",
+            "ID": 1.0,
+            "Designation": "Developer"
+        },
+        {
+            "Emp": "B",
+            "ID": 2.0,
+            "Designation": "BA"
+        },
+        {
+            "Emp": "C",
+            "ID": 3.0,
+            "Designation": "PM"
+        },
+        {
+            "Emp": "D",
+            "ID": 4.0,
+            "Designation": "Architect"
+        }
+    ]
+}
